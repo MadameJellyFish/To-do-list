@@ -21,10 +21,11 @@
 		</form>
 
 		<div class="container-task">
-
+			{% if mytasks is not empty %}
 			<div class="task">
 				<ul>
 					{% for task in mytasks %}
+						
 						<li>
 							<div class="item">
 								<form action="tasks/{{task.id}}" method="POST">
@@ -47,15 +48,18 @@
 								<span {% if task.checked %} class="checked" {% endif %}>{{task.nom}}</span>
 							</div>
 						</li>
+						
 						{# le name ici est le name de l'input  #}
 
 					{% endfor %}
 				</ul>
 			</div>
-
-			<form action="task/delete/all" methods="POST">
-			<a href="/" class="btn btnClear" type="submit">Clear</a>
+			<form action="tasks/delete/all" method="POST">
+			{% if mytasks is not empty %}
+			<button class="btn btnClear">Clear</button>
+			{% endif %}
 			</form>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

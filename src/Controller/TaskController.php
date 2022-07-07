@@ -73,7 +73,7 @@ class TaskController extends AbstractController
         return $this->redirect('/');
     }
 
-    #[Route('/tasks/edit/{id}', methods:['POST'])]
+    #[Route('/tasks/{id}', methods:['POST'])]
     public function delete($id)
     {
         $task = $this->repo->find($id);

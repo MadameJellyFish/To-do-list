@@ -48,7 +48,7 @@ h1 {
 .container-task {
     display: flex;
     gap: 20px;
-    width: 520px;
+    width: 550px;
 }
 
 .task{
@@ -106,10 +106,12 @@ li{
 }
 
 .btnClear{
-    height: 25px;
-    width: 46px;
+    height: 39px;
+    width: 61px;
+    font-size: 1em;
     text-align: center;
-    font-size: 1.1em;
+    font-weight: 500;
+
 }
 
 .btnAdd{
