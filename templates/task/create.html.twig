@@ -1,0 +1,61 @@
+{% extends "layout/default.html.twig" %}
+{% block title %}
+	To Do List
+
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>To do list</h1>
+		{# action / est la diretion ou il va apres toucher le btn #}
+		<form action="/" method="POST">
+			<div class="container-input">
+				<input
+				class="input" type="text" name="inputNewTask" placeholder="New task">
+				{# debo poner name  submite al button #}
+				<button class="btnAdd btn" name="submit">ADD</button>
+				{% if error is defined %}
+					<div clas="error">{{error}}</div>
+				{% endif %}
+			</div>
+		</form>
+
+		<div class="container-task">
+
+			<div class="task">
+				<ul>
+					{% for task in mytasks %}
+						<li>
+							<div class="item">
+								<form action="tasks/{{task.id}}" method="POST">
+									<button onclick="return confirm('Do you want to delete this task?')" class="btnPoubelle">
+										<i class="fa-solid fa-trash-can"></i>
+									</button>
+								</form>
+
+								{# quand je vais faire un update, c'est bien d'ecrire edit dans le URL, je dois utiliser un form #}
+								{# j'utilise le id de task #}
+								<form action="/tasks/edit/{{task.id}}" method="POST">
+									<button class="fait">
+										{% if task.checked %}
+											Fait
+										{% else %}
+											Pas fait
+										{% endif %}
+									</button>
+								</form>
+								<span {% if task.checked %} class="checked" {% endif %}>{{task.nom}}</span>
+							</div>
+						</li>
+						{# le name ici est le name de l'input  #}
+
+					{% endfor %}
+				</ul>
+			</div>
+
+			<form action="task/delete/all" methods="POST">
+			<a href="/" class="btn btnClear" type="submit">Clear</a>
+			</form>
+		</div>
+	</div>
+{% endblock %}

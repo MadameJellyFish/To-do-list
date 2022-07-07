@@ -1,0 +1,129 @@
+* {
+    margin: 0px;
+    padding: 0px
+}
+
+body {
+    background: linear-gradient(#44A5FF, #FF1593);
+    height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    
+}
+
+h1 {
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 6px 5px 7px rgba(0, 0, 0, 0.31);
+   
+}
+
+.container-input {
+    width: 520px;
+    display: flex;
+    padding-bottom: 20px;
+    gap: 20px;
+
+}
+
+.input {
+    width: 450px;
+    border-radius: 5px;
+    padding: 10px 10px 10px 30px;
+    border: none;
+}
+
+/* input :focus{
+    outline:none;
+}  */
+
+.container {
+    margin: 150px auto;
+    width: 500px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.container-task {
+    display: flex;
+    gap: 20px;
+    width: 520px;
+}
+
+.task{
+    background-color: white;
+    width: 380px;
+    border-radius: 5px;
+    padding: 10px 30px 20px;
+
+}
+
+.item {
+    width: 380px;
+    display: flex;
+    gap:10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border-bottom: solid 2px #848080;
+   
+}
+
+.icons{
+    display: flex;
+    gap:10px;
+    align-content: center;
+}
+
+.btnPoubelle{
+    background: none;
+    border: none;
+}
+
+.fait{
+    background: none;
+    border: none;
+    color: #FF1593;
+    font-weight: 700;
+}
+
+li{
+    list-style: none;
+    text-transform: capitalize;
+}
+
+.btn{
+    padding:8px;
+    background-color:black;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 6px 5px 7px rgba(0, 0, 0, 0.31);
+}
+
+.btnClear{
+    height: 25px;
+    width: 46px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.btnAdd{
+    height: 39px;
+    width: 67px;
+    font-size: 1em;
+}
+
+
+/* class checked */
+.checked{
+    background: none;
+    border: none;
+    color: #44A5FF;
+    text-decoration: line-through;
+    font-weight: 700;
+}
